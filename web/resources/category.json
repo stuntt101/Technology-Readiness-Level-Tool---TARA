@@ -1,0 +1,163 @@
+[
+  {
+    "id": 0,
+    "text": "All Books",
+    "items": []
+  },
+  {
+    "id": 1000,
+    "text": "Arts & Photography",
+    "items": []
+  },
+  {
+    "id": 2000,
+    "text": "Audiobooks",
+    "items": []
+  },
+  {
+    "id": 3000,
+    "text": "Biographies & Memoirs",
+    "items": []
+  },
+  {
+    "id": 4000,
+    "text": "Business & Investing",
+    "items": []
+  },
+  {
+    "id": 5000,
+    "text": "Children's Books",
+    "items": []
+  },
+  {
+    "id": 6000,
+    "text": "Comics & Graphic Novels",
+    "items": []
+  },
+  {
+    "id": 7000,
+    "text": "Cookbooks & Food Writing",
+    "items": []
+  },
+  {
+    "id": 8000,
+    "text": "Crafts, Home & Garden",
+    "items": []
+  },
+  {
+    "id": 9000,
+    "text": "Gift Picks",
+    "items": [
+      "90100",
+      "90200",
+      "90300",
+      "90400",
+      "90500",
+      "90600",
+      "90700",
+      "90800",
+      "90900",
+      "91000"
+    ]
+  },
+  {
+    "id": 10000,
+    "text": "History",
+    "items": []
+  },
+  {
+    "id": 11000,
+    "text": "Humor & Entertainment",
+    "items": []
+  },
+  {
+    "id": 12000,
+    "text": "Literature & Fiction",
+    "items": []
+  },
+  {
+    "id": 13000,
+    "text": "Mystery, Thriller & Suspense",
+    "items": []
+  },
+  {
+    "id": 14000,
+    "text": "Nonfiction",
+    "items": []
+  },
+  {
+    "id": 15000,
+    "text": "Romance",
+    "items": []
+  },
+  {
+    "id": 16000,
+    "text": "Science",
+    "items": []
+  },
+  {
+    "id": 17000,
+    "text": "Science Fiction & Fantasy",
+    "items": []
+  },
+  {
+    "id": 18000,
+    "text": "Sports & Outdoors",
+    "items": []
+  },
+  {
+    "id": 19000,
+    "text": "Teen & Young Adult",
+    "items": []
+  },
+  {
+    "id": 90100,
+    "text": "Little Bookworms",
+    "items": []
+  },
+  {
+    "id": 90200,
+    "text": "Fun & Quirky",
+    "items": []
+  },
+  {
+    "id": 90300,
+    "text": "Eat, Drink, Read",
+    "items": []
+  },
+  {
+    "id": 90400,
+    "text": "For the Young at Heart",
+    "items": []
+  },
+  {
+    "id": 90500,
+    "text": "Fantastic Fiction",
+    "items": []
+  },
+  {
+    "id": 90600,
+    "text": "Nothing But the Truth",
+    "items": []
+  },
+  {
+    "id": 90700,
+    "text": "Eye Candy",
+    "items": []
+  },
+  {
+    "id": 90800,
+    "text": "Cops & Crooks",
+    "items": []
+  },
+  {
+    "id": 90900,
+    "text": "Secrets of Success",
+    "items": []
+  },
+  {
+    "id": 91000,
+    "text": "Design, Construct, Create",
+    "items": []
+  }
+]

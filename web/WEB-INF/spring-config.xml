@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+    <context:component-scan base-package="com.era.controller" />
+    <mvc:annotation-driven>  
+        <mvc:message-converters>
+            <!-- Use the HibernateAware mapper instead of the default -->
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="com.era.json.util.HibernateAwareObjectMapper" />
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>  
+    <mvc:default-servlet-handler/>
+ 
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    <bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+		 <!-- setting maximum upload size -->
+                 <property name="maxUploadSize" value="100000" />
+		
+
+	</bean>
+ 
+
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/equipment_readiness_db?autoReconnect=true" />
+        <property name="username" value="root" />
+        <property name="password" value="13579" />
+    </bean>
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="annotatedClasses">
+            <list>
+                <value>com.era.model.Category</value>
+                <value>com.era.model.ProcessActivity</value>
+                <value>com.era.model.Specification</value>
+                <value>com.era.model.SubActivity</value>
+                <value>com.era.model.Equipment</value>
+                <value>com.era.model.Company</value>
+                <value>com.era.model.User</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="txManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <bean id="persistenceExceptionTranslationPostProcessor"
+          class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+    <bean id="categoryDao" class="com.era.dao.CategoryDaoImpl"></bean>
+    <bean id="categoryService" class="com.era.service.CategoryServiceImpl"></bean>
+    <bean id="companyDao" class="com.era.dao.CompanyDaoImpl"></bean>
+    <bean id="companyService" class="com.era.service.CompanyServiceImpl"></bean>
+    <bean id="equipmentDao" class="com.era.dao.EquipmentDaoImpl"></bean>
+    <bean id="equipmentService" class="com.era.service.EquipmentServiceImpl"></bean>
+    <bean id="processActivityDao" class="com.era.dao.ProcessActivityDaoImpl"></bean>
+    <bean id="processActivityService" class="com.era.service.ProcessActivityServiceImpl"></bean>
+    <bean id="specificationDao" class="com.era.dao.SpecificationDaoImpl"></bean>
+    <bean id="specificationService" class="com.era.service.SpecificationServiceImpl"></bean>
+    <bean id="subActivityDao" class="com.era.dao.SubActivityDaoImpl"></bean>
+    <bean id="subActivityService" class="com.era.service.SubActivityServiceImpl"></bean>
+    <bean id="userDao" class="com.era.dao.UserDaoImpl"></bean>
+    <bean id="userService" class="com.era.service.UserServiceImpl"></bean>
+</beans>

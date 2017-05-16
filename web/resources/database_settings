@@ -1,0 +1,31 @@
+// This  file contains mongo db installation and configuration 
+
+Download MongoDB NoSQL Database 2.6 form: https://www.mongodb.com/download-center
+
+Then install the database.
+
+Creating connection:
+
+Create a directory to store mongo database collections
+eg: D:\username\Documents\data\db
+
+Run CMD and change the directory to  C:\Program Files\MongoDB\Server\3.4\bin
+then enter
+mongod --dbpath D:\username\Documents\data\db
+
+then enter
+mongo
+
+
+For the MongoDB client you can robomongo
+
+using  robomongo you can:
+
+create database
+create collection(=table)
+CRUD into the  collection
+
+
+
+
+
